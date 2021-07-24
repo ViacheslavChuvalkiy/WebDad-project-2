@@ -84,7 +84,7 @@ window.onload = (function () {
       let sliderblock__container = document.createElement('div');
       sliderblock__container.classList.add('sliderblock__container');
 
-      let container_img =  document.createElement('div');
+      let container_img = document.createElement('div');
       container_img.classList.add('slider_container_img');
 
       for (let i = 0; i < elem.collection.length; i++) {
@@ -119,7 +119,7 @@ window.onload = (function () {
 
     let arrArrow = document.getElementsByTagName('span');
 
-    for (let i =0; i< arrArrow.length; i++){
+    for (let i = 0; i < arrArrow.length; i++) {
 
       let arrowItem = arrArrow[i];
 
@@ -134,45 +134,75 @@ window.onload = (function () {
 
     let parrentBlock = directionleft ? this.nextElementSibling.firstElementChild : this.previousElementSibling.firstElementChild;
 
-    moveBlock(parrentBlock,directionleft);
+    moveBlock(parrentBlock, directionleft);
 
-    function moveBlock(parrentBlock,directionleft) {
+    function moveBlock(parrentBlock, directionleft) {
 
-      if(parrentBlock.localName == 'div'){
+      if (parrentBlock.localName == 'div') {
 
         let styleValue = parrentBlock.style.transform;
         let inx = styleValue.indexOf('(') + 1;
 
-        styleValue = styleValue.slice(inx,styleValue.length -3);
+        styleValue = styleValue.slice(inx, styleValue.length - 3);
 
         if (styleValue == '') {
 
-          if (directionleft){
-            parrentBlock.setAttribute('style','transform:translateX(10px)');
-          }
-          else {
-            parrentBlock.setAttribute('style','transform:translateX(-10px)');
+          if (directionleft) {
+            parrentBlock.setAttribute('style', 'transform:translateX(10px)');
+          } else {
+            parrentBlock.setAttribute('style', 'transform:translateX(-10px)');
           }
 
-        }
-        else {
+        } else {
           let newValue;
 
-          if (directionleft){
-              newValue = (Number(styleValue) + 10);
-          }
-          else {
+          if (directionleft) {
+            newValue = (Number(styleValue) + 10);
+          } else {
             newValue = (Number(styleValue) - 10);
           }
 
-          parrentBlock.setAttribute('style','transform:translateX( ' + newValue + 'px)');
+          parrentBlock.setAttribute('style', 'transform:translateX( ' + newValue + 'px)');
         }
       }
 
     }
   }
 
+  function initInputHandler() {
+
+    let container_labels = document.getElementsByClassName('container_label');
+
+    for (let i = 0; i < container_labels.length; i++) {
+
+      let labelItem = container_labels[i];
+
+      labelItem.addEventListener('click', showAppBlocks);
+    }
+
+  }
+
+  function showAppBlocks() {
+
+    let container_blocks = document.getElementsByClassName('container-block');
+
+    let currentBlockID = this.previousElementSibling.value;
+
+    for (let i = 0; i < container_blocks.length; i++) {
+
+      let tempBlock = container_blocks[i];
+
+      if (tempBlock.classList.contains('hideBlock') && tempBlock.id === currentBlockID) {
+        tempBlock.classList.remove('hideBlock');
+      } else {
+        tempBlock.classList.add('hideBlock');
+      }
+    }
+
+  }
+
   initSlider();
   initActionArrow();
+  initInputHandler();
 
 });

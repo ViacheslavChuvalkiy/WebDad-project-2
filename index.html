@@ -7,22 +7,53 @@
 </head>
 <body>
 
-
 <div class="container">
-  <h1>CAROUSEL JAVASCRIPT</h1>
 
-  <div class="sliderRow">
+  <div class="containerInputs">
+    <input type="radio" id="containerChoice1"
+           name="container" value="slider" checked>
+    <label for="containerChoice1" class="container_label">Slider</label>
 
-    <span class="sliderLeft left"><</span>
-    <div class="sliderRowContent">
-      <div class="sliderRowBlocks">
-    </div>
-    </div>
-    <span class="sliderRight right" >></span>
+    <input type="radio" id="containerChoice2"
+           name="container" value="calc">
+    <label for="containerChoice2" class="container_label">Calc</label>
+
+    <input type="radio" id="containerChoice3"
+           name="container" value="timing">
+    <label for="containerChoice3" class="container_label">Timing</label>
+
+    <input type="radio" id="containerChoice4"
+           name="container" value="maze">
+    <label for="containerChoice4" class="container_label">Maze</label>
+
+    <input type="radio" id="containerChoice5"
+           name="container" value="weather">
+    <label for="containerChoice5" class="container_label">Weather</label>
   </div>
 
-  <div class="sliderMarks">
+  <div id='slider' class="container-block">
+    <h1>CAROUSEL JAVASCRIPT</h1>
+
+    <div class="sliderRow">
+
+      <span class="sliderLeft left"><</span>
+      <div class="sliderRowContent">
+        <div class="sliderRowBlocks">
+        </div>
+      </div>
+      <span class="sliderRight right">></span>
+    </div>
+
+    <div class="sliderMarks"></div>
+
   </div>
+
+  <div id='calc' class="container-block hideBlock"></div>
+  <div id='timing' class="container-block hideBlock"></div>
+  <div id='maze' class="container-block hideBlock"></div>
+  <div id='weather' class="container-block hideBlock"></div>
+
+
 </div>
 
 

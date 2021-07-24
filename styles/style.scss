@@ -1,16 +1,42 @@
-.container{
+.container {
   width: 80%;
-  height: 23rem;
+  height: 29rem;
   margin: 0 auto;
   background-color: lightgrey;
   overflow: hidden;
   text-align: center;
 
-  & h1{
+  .hideBlock {
+    display: none;
+  }
+
+  & h1 {
     padding: 4rem 0;
     color: blueviolet;
     word-spacing: 0.5rem;
     letter-spacing: 2px;
+  }
+
+  .containerInputs {
+    display: inline-block;
+    margin: 2rem 0;
+    width: auto;
+    font-size: 1.3rem;
+    font-weight: 600;
+
+    & input {
+      display: none;
+    }
+
+    & input:checked label {
+      display: block;
+      text-decoration: underline blueviolet;
+    }
+
+    & label {
+      cursor: pointer;
+      padding: 0 0.5rem 0 0;
+    }
   }
 
   .sliderRow {
@@ -20,7 +46,7 @@
     position: relative;
     width: 100%;
 
-    & span{
+    & span {
       width: 1.5rem;
       height: 1.5rem;
       position: absolute;
@@ -32,16 +58,16 @@
       cursor: pointer;
     }
 
-    .sliderLeft{
+    .sliderLeft {
       left: 0.5rem;
     }
 
-    .sliderRight{
+    .sliderRight {
       right: 0.5rem;
     }
 
 
-    .sliderRowContent{
+    .sliderRowContent {
       overflow: hidden;
       width: 95%;
 
@@ -101,11 +127,11 @@
     }
   }
 
-  .sliderMarks{
-      display: inline-block;
-      margin: 2.5rem auto 0 auto;
+  .sliderMarks {
+    display: inline-block;
+    margin: 2.5rem auto 0 auto;
 
-    .sliderMark{
+    .sliderMark {
       display: inline-block;
       width: 0.8rem;
       height: 0.8rem;
