@@ -1,0 +1,145 @@
+.container {
+  width: 80%;
+  height: 29rem;
+  margin: 0 auto;
+  background-color: lightgrey;
+  overflow: hidden;
+  text-align: center;
+
+  .hideBlock {
+    display: none;
+  }
+
+  & h1 {
+    padding: 4rem 0;
+    color: blueviolet;
+    word-spacing: 0.5rem;
+    letter-spacing: 2px;
+  }
+
+  .containerInputs {
+    display: inline-block;
+    margin: 2rem 0;
+    width: auto;
+    font-size: 1.3rem;
+    font-weight: 600;
+
+    & input {
+      display: none;
+    }
+
+    & input:checked label {
+      display: block;
+      text-decoration: underline blueviolet;
+    }
+
+    & label {
+      cursor: pointer;
+      padding: 0 0.5rem 0 0;
+    }
+  }
+
+  .sliderRow {
+
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    width: 100%;
+
+    & span {
+      width: 1.5rem;
+      height: 1.5rem;
+      position: absolute;
+      font-size: 1.3rem;
+      top: 37%;
+      border-radius: 50%;
+      background-color: #395662;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .sliderLeft {
+      left: 0.5rem;
+    }
+
+    .sliderRight {
+      right: 0.5rem;
+    }
+
+
+    .sliderRowContent {
+      overflow: hidden;
+      width: 95%;
+
+      .sliderRowBlocks {
+        white-space: nowrap;
+        display: block;
+        margin: 0;
+        padding: 0;
+        width: auto;
+
+        .sliderBlock {
+          display: inline-block;
+          overflow: hidden;
+          position: relative;
+          min-width: 9rem;
+          margin: 0.3rem 1.3rem;
+          padding: 0.5rem 2.5rem;
+          border: 2px solid grey;
+          box-shadow: 0px 2px 3px 9px grey;
+          background-color: black;
+
+          .sliderblock__container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+            overflow: hidden;
+            max-width: 97%;
+            align-items: center;
+
+            & img {
+              width: 50px;
+              height: 50px;
+              cursor: pointer;
+            }
+
+            & img:first-child, & img + img {
+              padding-right: 0.5rem;
+            }
+
+            .slider_container_img {
+              border: 2px solid grey;
+            }
+
+          }
+
+          .slider-block__left {
+            left: 0.4rem;
+            top: 34%;
+          }
+
+          .slider-block__right {
+            right: 0.8rem;
+            top: 34%;
+          }
+        }
+      }
+    }
+  }
+
+  .sliderMarks {
+    display: inline-block;
+    margin: 2.5rem auto 0 auto;
+
+    .sliderMark {
+      display: inline-block;
+      width: 0.8rem;
+      height: 0.8rem;
+      background-color: black;
+      border-radius: 50%;
+      margin: 0 0.4rem;
+
+    }
+  }
+
+}
