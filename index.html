@@ -3,10 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <title>JS tasks</title>
+  <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
 
+<div class="container">
 
+  <div class="containerInputs">
+    <input type="radio" id="containerChoice1"
+           name="container" value="slider" checked>
+    <label for="containerChoice1" class="container_label">Slider</label>
+
+    <input type="radio" id="containerChoice2"
+           name="container" value="calc">
+    <label for="containerChoice2" class="container_label">Calc</label>
+
+    <input type="radio" id="containerChoice3"
+           name="container" value="timing">
+    <label for="containerChoice3" class="container_label">Timing</label>
+
+    <input type="radio" id="containerChoice4"
+           name="container" value="maze">
+    <label for="containerChoice4" class="container_label">Maze</label>
+
+    <input type="radio" id="containerChoice5"
+           name="container" value="weather">
+    <label for="containerChoice5" class="container_label">Weather</label>
+  </div>
+
+  <div id='slider' class="container-block hideBlock">
+    <h1>CAROUSEL JAVASCRIPT</h1>
+
+    <div class="sliderRow">
+
+      <span class="sliderLeft left"><</span>
+      <div class="sliderRowContent">
+        <div class="sliderRowBlocks">
+        </div>
+      </div>
+      <span class="sliderRight right">></span>
+    </div>
+
+    <div class="sliderMarks"></div>
+
+  </div>
+
+  <div id='calc' class="container-block">
+
+    <h1>CALCULATOR</h1>
+
+    <div class="container-calc">
+
+      <div class="calc-grid">
+        <div class="grid-item-input">
+          <input type="text" id="calcInput" placeholder="введите число" value="">
+        </div>
+        <div class="grid-item"><</div>
+        <div class="grid-item">7</div>
+        <div class="grid-item">8</div>
+        <div class="grid-item">9</div>
+        <div class="grid-item">*</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+        <div class="grid-item">/</div>
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">+</div>
+        <div class="grid-item">C</div>
+        <div class="grid-item">0</div>
+        <div class="grid-item">=</div>
+        <div class="grid-item">-</div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+  <div id='timing' class="container-block hideBlock"></div>
+  <div id='maze' class="container-block hideBlock"></div>
+  <div id='weather' class="container-block hideBlock"></div>
+
+
+</div>
 
 
 <script src="index.js"></script>
