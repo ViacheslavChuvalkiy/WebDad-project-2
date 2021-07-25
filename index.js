@@ -8,7 +8,10 @@ window.onload = (function () {
         'img/explorer.png',
         'img/firefox.png',
         'img/opera.png',
-        'img/safari.png'
+        'img/safari.png',
+        'img/chrome.png',
+        'img/explorer.png',
+        'img/firefox.png'
       ]
     },
     {
@@ -123,7 +126,9 @@ window.onload = (function () {
 
       let arrowItem = arrArrow[i];
 
-      arrowItem.addEventListener('click', moveSliderBlock)
+      if(arrowItem.classList.contains('left') || arrowItem.classList.contains('right')) {
+        arrowItem.addEventListener('click', moveSliderBlock)
+      }
     }
 
   }
@@ -132,34 +137,98 @@ window.onload = (function () {
 
     let directionleft = this.classList.contains('left');
 
-    let parrentBlock = directionleft ? this.nextElementSibling.firstElementChild : this.previousElementSibling.firstElementChild;
+    let parrentBlock =  directionleft ? this.nextElementSibling.firstElementChild : this.previousElementSibling.firstElementChild;
 
     moveBlock(parrentBlock, directionleft);
 
     function moveBlock(parrentBlock, directionleft) {
 
-      if (parrentBlock.localName == 'div') {
+      let arrChilds = Array.from(parrentBlock.children);
+      let widthparrentBlock = parrentBlock.parentElement.offsetWidth;
+      let widthAllChilds = 0;
+      let lastActiveBlock = undefined;
+
+      arrChilds.forEach( (item,index) => {
+        widthAllChilds += item.offsetWidth;
+        if(item.classList.contains('active')){
+          lastActiveBlock = index === arrChilds.length -1 ? index + 1 :index;
+        }
+      });
+
+      let widthChild = widthAllChilds / arrChilds.length;
+      let CountVisibleBlocks = Math.round(widthparrentBlock/widthChild);
+
+      if(directionleft && lastActiveBlock === undefined){
+          arrChilds[0].classList.add('active');
+          lastActiveBlock = 0;
+      }
+
+      if(lastActiveBlock === undefined && arrChilds.length >= CountVisibleBlocks){
+        arrChilds[CountVisibleBlocks-1].classList.add('active');
+        lastActiveBlock = CountVisibleBlocks;
+      }
+
+      if (parrentBlock.localName === 'div') {
 
         let styleValue = parrentBlock.style.transform;
         let inx = styleValue.indexOf('(') + 1;
 
         styleValue = styleValue.slice(inx, styleValue.length - 3);
 
-        if (styleValue == '') {
+        if (styleValue === '') {
 
           if (directionleft) {
-            parrentBlock.setAttribute('style', 'transform:translateX(10px)');
+
+            if(lastActiveBlock === 0){
+              return;
+            }
+            else{
+              arrChilds[lastActiveBlock].classList.remove('active');
+              lastActiveBlock -= 1;
+              arrChilds[lastActiveBlock].classList.add('active');
+            }
+
+            parrentBlock.setAttribute('style', 'transform:translateX( ' + widthChild + 'px)');
           } else {
-            parrentBlock.setAttribute('style', 'transform:translateX(-10px)');
+
+            if(lastActiveBlock > arrChilds.length){
+              return;
+            }
+            else{
+              arrChilds[lastActiveBlock-1].classList.remove('active');
+              arrChilds[lastActiveBlock].classList.add('active');
+              lastActiveBlock += 1;
+            }
+
+            parrentBlock.setAttribute('style', 'transform:translateX( -' + widthChild + 'px)');
           }
 
         } else {
           let newValue;
 
           if (directionleft) {
-            newValue = (Number(styleValue) + 10);
+            if(lastActiveBlock === 0){
+              return;
+            }
+            else{
+              arrChilds[lastActiveBlock].classList.remove('active');
+              lastActiveBlock -= 1;
+              arrChilds[lastActiveBlock].classList.add('active');
+            }
+
+            newValue = (Number(styleValue) + widthChild);
           } else {
-            newValue = (Number(styleValue) - 10);
+
+            if(lastActiveBlock > arrChilds.length){
+              return;
+            }
+            else{
+              arrChilds[lastActiveBlock - 1].classList.remove('active');
+              arrChilds[lastActiveBlock].classList.add('active');
+              lastActiveBlock += 1;
+
+            }
+            newValue = (Number(styleValue) - widthChild);
           }
 
           parrentBlock.setAttribute('style', 'transform:translateX( ' + newValue + 'px)');
