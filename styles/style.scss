@@ -6,10 +6,6 @@
   overflow: hidden;
   text-align: center;
 
-  .hideBlock {
-    display: none;
-  }
-
   .containerInputs {
     display: inline-block;
     margin: 2rem 0;
@@ -21,15 +17,19 @@
       display: none;
     }
 
-    & input:checked label {
-      display: block;
-      text-decoration: underline blueviolet;
-    }
-
     & label {
       cursor: pointer;
       padding: 0 0.5rem 0 0;
     }
+
+    & input:checked label{
+      overflow: auto;
+      text-decoration: underline blueviolet;
+    }
+  }
+
+  .hideBlock {
+    display: none;
   }
 
   @import 'slider/style';

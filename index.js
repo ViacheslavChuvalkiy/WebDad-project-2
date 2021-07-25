@@ -146,26 +146,26 @@ window.onload = (function () {
       let arrChilds = Array.from(parrentBlock.children);
       let widthparrentBlock = parrentBlock.parentElement.offsetWidth;
       let widthAllChilds = 0;
-      let lastActiveBlock = undefined;
+      let activeBlock = undefined;
 
       arrChilds.forEach( (item,index) => {
         widthAllChilds += item.offsetWidth;
         if(item.classList.contains('active')){
-          lastActiveBlock = index === arrChilds.length -1 ? index + 1 :index;
+          activeBlock = item;
         }
       });
 
       let widthChild = widthAllChilds / arrChilds.length;
       let CountVisibleBlocks = Math.round(widthparrentBlock/widthChild);
 
-      if(directionleft && lastActiveBlock === undefined){
+      if(directionleft && activeBlock === undefined){
           arrChilds[0].classList.add('active');
-          lastActiveBlock = 0;
+          activeBlock = arrChilds[0];
       }
 
-      if(lastActiveBlock === undefined && arrChilds.length >= CountVisibleBlocks){
+      if(activeBlock === undefined && arrChilds.length >= CountVisibleBlocks){
         arrChilds[CountVisibleBlocks-1].classList.add('active');
-        lastActiveBlock = CountVisibleBlocks;
+        activeBlock = arrChilds[CountVisibleBlocks-1];
       }
 
       if (parrentBlock.localName === 'div') {
@@ -179,25 +179,27 @@ window.onload = (function () {
 
           if (directionleft) {
 
-            if(lastActiveBlock === 0){
+            if(arrChilds.indexOf(activeBlock) === 0){
               return;
             }
             else{
-              arrChilds[lastActiveBlock].classList.remove('active');
-              lastActiveBlock -= 1;
-              arrChilds[lastActiveBlock].classList.add('active');
+              activeBlock.classList.remove('active');
+              activeBlock = arrChilds[ arrChilds.indexOf(activeBlock) -1];
+              activeBlock.classList.add('active');
             }
 
             parrentBlock.setAttribute('style', 'transform:translateX( ' + widthChild + 'px)');
           } else {
 
-            if(lastActiveBlock > arrChilds.length){
+            if(arrChilds.indexOf(activeBlock) + 1 === arrChilds.length && widthAllChilds < widthparrentBlock + (-styleValue)){
               return;
             }
             else{
-              arrChilds[lastActiveBlock-1].classList.remove('active');
-              arrChilds[lastActiveBlock].classList.add('active');
-              lastActiveBlock += 1;
+              if(arrChilds.indexOf(activeBlock) + 1 !== arrChilds.length) {
+                activeBlock.classList.remove('active');
+                activeBlock = arrChilds[arrChilds.indexOf(activeBlock) + 1];
+                activeBlock.classList.add('active');
+              }
             }
 
             parrentBlock.setAttribute('style', 'transform:translateX( -' + widthChild + 'px)');
@@ -207,26 +209,27 @@ window.onload = (function () {
           let newValue;
 
           if (directionleft) {
-            if(lastActiveBlock === 0){
+            if(arrChilds.indexOf(activeBlock) === 0){
               return;
             }
             else{
-              arrChilds[lastActiveBlock].classList.remove('active');
-              lastActiveBlock -= 1;
-              arrChilds[lastActiveBlock].classList.add('active');
+              activeBlock.classList.remove('active');
+              activeBlock = arrChilds[ arrChilds.indexOf(activeBlock) -1];
+              activeBlock.classList.add('active');
             }
 
             newValue = (Number(styleValue) + widthChild);
           } else {
 
-            if(lastActiveBlock > arrChilds.length){
+            if(arrChilds.indexOf(activeBlock) + 1 === arrChilds.length && widthAllChilds < widthparrentBlock + (-styleValue)){
               return;
             }
             else{
-              arrChilds[lastActiveBlock - 1].classList.remove('active');
-              arrChilds[lastActiveBlock].classList.add('active');
-              lastActiveBlock += 1;
-
+              if(arrChilds.indexOf(activeBlock) + 1 !== arrChilds.length) {
+                activeBlock.classList.remove('active');
+                activeBlock = arrChilds[arrChilds.indexOf(activeBlock) + 1];
+                activeBlock.classList.add('active');
+              }
             }
             newValue = (Number(styleValue) - widthChild);
           }
