@@ -1,3 +1,7 @@
+body{
+  user-select: none;
+}
+
 .container {
   width: 80%;
   height: 29rem;
@@ -32,6 +36,6 @@
     display: none;
   }
 
-  @import 'slider/style';
-  @import 'calc/style';
+  @import 'styles/slider/style';
+  @import 'styles/calc/style';
 }
