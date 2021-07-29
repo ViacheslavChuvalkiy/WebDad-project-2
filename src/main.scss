@@ -4,7 +4,8 @@ body{
 
 .container {
   width: 80%;
-  height: 29rem;
+  height: auto;
+  min-height: 29rem;
   margin: 0 auto;
   background-color: lightgrey;
   overflow: hidden;
@@ -38,4 +39,5 @@ body{
 
   @import 'styles/slider/style';
   @import 'styles/calc/style';
+  @import 'styles/timing/style';
 }

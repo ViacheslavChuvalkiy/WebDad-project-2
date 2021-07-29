@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>JS tasks</title>
+  <link rel="icon" href="./img/js.png" type="image/png">
+  <link href="/node_modules/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet">
 </head>
 <body>
 
@@ -47,7 +49,7 @@
 
   </div>
 
-  <div id='calc' class="container-block">
+  <div id='calc' class="container-block hideBlock">
 
     <h1>CALCULATOR</h1>
 
@@ -80,7 +82,48 @@
     </div>
 
   </div>
-  <div id='timing' class="container-block hideBlock"></div>
+  <div id='timing' class="container-block">
+
+    <h1>TIMING</h1>
+
+    <div class="container-timing">
+      <nav>
+        <ul>
+          <i class="fas fa-cog"></i>
+          <i class="fas fa-circle-notch"></i>
+        </ul>
+      </nav>
+      
+      <ul class="timing-options">
+        <li class="active-time">45/15</li>
+        <li>25/10</li>
+        <li>15/10</li>
+      </ul>
+
+      <div class="timing-block">
+
+        <div class="timing-clock-min">
+          <span>45</span>
+        </div>
+        <span>:</span>
+        <div class="timing-clock-sec">
+          <span>15</span>
+        </div>
+
+        <div class="timing-block-btn">
+          <button class="timing-btn">Старт</button>
+          <button class="timing-btn">Стоп</button>
+        </div>
+
+      </div>
+
+      <div class="timing-footer">
+        <p>Time to work!!!</p>
+      </div>
+
+    </div>
+
+  </div>
   <div id='maze' class="container-block hideBlock"></div>
   <div id='weather' class="container-block hideBlock"></div>
 

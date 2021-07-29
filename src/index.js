@@ -16,6 +16,7 @@ import img10 from './img/snapChat.png';
 import img11 from './img/ticTok.png';
 import img12 from './img/whatsApp.png';
 import img13 from './img/youTube.png';
+import img14 from './img/js.png';
 
 InitSliderBlockFunction();
 InitCalcBlockFunction();
