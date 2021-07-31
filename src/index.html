@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS tasks</title>
+  <link rel="icon" href="./img/js.png" type="image/png">
+  <link href="/node_modules/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+
+  <div class="containerInputs">
+    <input type="radio" id="containerChoice1"
+           name="container" value="slider" checked>
+    <label for="containerChoice1" class="container_label">Slider</label>
+
+    <input type="radio" id="containerChoice2"
+           name="container" value="calc">
+    <label for="containerChoice2" class="container_label">Calc</label>
+
+    <input type="radio" id="containerChoice3"
+           name="container" value="timing">
+    <label for="containerChoice3" class="container_label">Timing</label>
+
+    <input type="radio" id="containerChoice4"
+           name="container" value="maze">
+    <label for="containerChoice4" class="container_label">Maze</label>
+
+    <input type="radio" id="containerChoice5"
+           name="container" value="weather">
+    <label for="containerChoice5" class="container_label">Weather</label>
+  </div>
+
+  <div id='slider' class="container-block hideBlock">
+    <h1>CAROUSEL JAVASCRIPT</h1>
+
+    <div class="sliderRow">
+
+      <span class="sliderLeft left"><</span>
+      <div class="sliderRowContent">
+        <div class="sliderRowBlocks">
+        </div>
+      </div>
+      <span class="sliderRight right">></span>
+    </div>
+
+    <div class="sliderMarks"></div>
+
+  </div>
+
+  <div id='calc' class="container-block hideBlock">
+
+    <h1>CALCULATOR</h1>
+
+    <div class="container-calc">
+
+      <div class="calc-grid">
+        <div class="grid-item-input">
+          <input type="text" id="calcInput" placeholder="введите число" value="">
+        </div>
+        <div class="grid-item"><</div>
+        <div class="grid-item">7</div>
+        <div class="grid-item">8</div>
+        <div class="grid-item">9</div>
+        <div class="grid-item">*</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+        <div class="grid-item">/</div>
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">+</div>
+        <div class="grid-item">C</div>
+        <div class="grid-item">0</div>
+        <div class="grid-item">=</div>
+        <div class="grid-item">-</div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <div id='timing' class="container-block">
+
+    <h1>TIMING</h1>
+
+    <div class="container-timing">
+      <nav>
+        <ul>
+          <i class="fas fa-cog"></i>
+          <i class="fas fa-circle-notch"></i>
+        </ul>
+      </nav>
+
+      <div class="timing-setting">
+
+        <div class="timing-setting-work">
+          <p>Время работы</p>
+          <p>
+          <span>Минуты </span>
+          <input type="number" id="timing-work-min" class="setting-input" min="0" max="999" value="45">
+          </p>
+          <p>
+            <span>Секунды</span>
+            <input type="number" id="timing-work-sec" class="setting-input" min="1" max="59" value="00">
+          </p>
+        </div>
+
+        <div class="timing-setting-rest">
+          <p>Время отдыха</p>
+          <p>
+          <span>Минуты </span>
+            <input type="number" id="timing-rest-min" class="setting-input" min="0" max="999" value="15">
+          </p>
+          <p>
+          <span>Секунды</span>
+            <input type="number" id="timing-rest-sec" class="setting-input" min="1" max="59" value="00">
+          </p>
+        </div>
+
+        <div class="timing-setting-btn">
+          <button id="go" class=" timing-btn">Поехали</button>
+          <button id="cancel" class=" timing-btn">Отмена</button>
+        </div>
+
+      </div>
+      
+      <ul class="timing-options">
+        <li class="active-time">45/15</li>
+        <li>25/10</li>
+        <li>15/5</li>
+      </ul>
+
+      <div class="timing-block">
+
+        <div class="timing-clock-min">
+          <div>45</div>
+        </div>
+        <span>:</span>
+        <div class="timing-clock-sec">
+          <div>00</div>
+        </div>
+
+        <div class="timing-block-btn">
+          <button class="timing-btn" id="start">Старт</button>
+          <button class="timing-btn" id="stop">Стоп</button>
+        </div>
+
+      </div>
+
+      <div class="timing-footer">
+        <p>Time to work!!!</p>
+      </div>
+
+    </div>
+
+
+
+  </div>
+  <div id='maze' class="container-block hideBlock"></div>
+  <div id='weather' class="container-block hideBlock"></div>
+
+
+</div>
+
+</body>
+</html>
