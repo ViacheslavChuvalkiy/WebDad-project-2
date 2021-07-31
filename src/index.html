@@ -93,26 +93,59 @@
           <i class="fas fa-circle-notch"></i>
         </ul>
       </nav>
+
+      <div class="timing-setting">
+
+        <div class="timing-setting-work">
+          <p>Время работы</p>
+          <p>
+          <span>Минуты </span>
+          <input type="number" id="timing-work-min" class="setting-input" min="0" max="999" value="45">
+          </p>
+          <p>
+            <span>Секунды</span>
+            <input type="number" id="timing-work-sec" class="setting-input" min="1" max="59" value="00">
+          </p>
+        </div>
+
+        <div class="timing-setting-rest">
+          <p>Время отдыха</p>
+          <p>
+          <span>Минуты </span>
+            <input type="number" id="timing-rest-min" class="setting-input" min="0" max="999" value="15">
+          </p>
+          <p>
+          <span>Секунды</span>
+            <input type="number" id="timing-rest-sec" class="setting-input" min="1" max="59" value="00">
+          </p>
+        </div>
+
+        <div class="timing-setting-btn">
+          <button id="go" class=" timing-btn">Поехали</button>
+          <button id="cancel" class=" timing-btn">Отмена</button>
+        </div>
+
+      </div>
       
       <ul class="timing-options">
         <li class="active-time">45/15</li>
         <li>25/10</li>
-        <li>15/10</li>
+        <li>15/5</li>
       </ul>
 
       <div class="timing-block">
 
         <div class="timing-clock-min">
-          <span>45</span>
+          <div>45</div>
         </div>
         <span>:</span>
         <div class="timing-clock-sec">
-          <span>15</span>
+          <div>00</div>
         </div>
 
         <div class="timing-block-btn">
-          <button class="timing-btn">Старт</button>
-          <button class="timing-btn">Стоп</button>
+          <button class="timing-btn" id="start">Старт</button>
+          <button class="timing-btn" id="stop">Стоп</button>
         </div>
 
       </div>
@@ -122,6 +155,8 @@
       </div>
 
     </div>
+
+
 
   </div>
   <div id='maze' class="container-block hideBlock"></div>

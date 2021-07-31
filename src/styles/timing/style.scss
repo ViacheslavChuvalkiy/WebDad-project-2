@@ -3,7 +3,15 @@
   width: 30rem;
   height: auto;
   margin: 0 auto;
-  background-color: #917045;
+  background-color: #bc4623;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+
+
+  .block-timing-opacity{
+    opacity: 0.5;
+  }
 
   & nav{
 
@@ -24,6 +32,49 @@
         display: inline-block;
       }
     }
+  }
+
+  .timing-setting{
+    display: inline-grid;
+    position: absolute;
+    left: -50%;
+    width: 15rem;
+    height: 14rem;
+    background-color: #91365d;
+    transition: all 0.5s;
+    z-index: 50;
+
+    & span{
+      white-space: pre;
+    }
+
+    & p {
+      margin: 0.2rem 0 0.3rem 0 ;
+    }
+
+    & input {
+      width: 3rem;
+      margin: 0 1rem ;
+      padding: 0 0.3rem;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+
+    & button{
+      width: 45%;
+      height: 2.4rem;
+      text-align: center;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      font-weight: 600;
+      background-color: transparent;
+      cursor: pointer;
+    }
+
+  }
+
+  .timing-setting-visible{
+    left: 8rem;
   }
 
   .timing-options{
@@ -58,7 +109,15 @@
       font-size: 4rem;
       font-weight: 600;
       border-radius: 0.5rem;
-      border: 2px solid #604891;
+      border: 2px solid #91365d;
+
+      & div{
+        transition: all 0.7s;
+      }
+      .rotate_block{
+        transform: rotateX(-360deg);
+      }
+
     }
 
     & span{
@@ -70,8 +129,8 @@
       margin: 2rem auto;
 
       & button{
-        padding: 0.5rem 1rem;
-        margin: 0 1rem;
+        width: 13rem;
+        padding: 0.5rem 0;
         font-size: 2rem;
         font-weight: 600;
         background-color: transparent;
@@ -89,3 +148,4 @@
   }
 
 }
+

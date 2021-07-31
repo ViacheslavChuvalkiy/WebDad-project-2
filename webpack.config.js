@@ -32,8 +32,12 @@ module.exports = {
           }
         }
         ]
-      }
+      },
 
+      ///////////audio////////////
+      { test: /\.mp3$/,
+        use: 'file-loader'
+      }
     ]
   },
 
