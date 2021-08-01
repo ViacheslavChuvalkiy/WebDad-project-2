@@ -37,7 +37,8 @@ body{
     display: none;
   }
 
-  @import 'styles/slider/style';
-  @import 'styles/calc/style';
-  @import 'styles/timing/style';
+  @import './slider/style';
+  @import './calc/style';
+  @import './timing/style';
+  @import './maze/style';
 }

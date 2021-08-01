@@ -1,0 +1,43 @@
+
+.container-maze{
+
+  display: grid;
+  width: 45rem;
+  height: 27rem;
+  padding: 0.5rem 0;
+  margin: 1rem auto;
+  box-shadow: 0 0 6px 8px grey;;
+  border: 5px solid grey;
+  background-color: lightgrey;
+
+  .maze-setting{
+
+    .setting-players {
+      width: 80%;
+      margin: 0 auto;
+      background-image: url("./src/img/background-players.png");
+
+      & input {
+        display: none;
+      }
+    }
+
+    .setting-game {
+      display: inline-flex;
+      margin: 0 auto;
+      background-image: url("./src/img/background-setting.png");
+
+      & input {
+        width: 2rem;
+        padding: 0 0.5rem;
+        background-color: transparent;
+      }
+
+      & span {
+        white-space: pre;
+        padding: 0 0.5rem;
+      }
+
+    }
+  }
+}
