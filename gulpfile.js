@@ -25,7 +25,7 @@ const path = {
   watch: { //Тут мы укажем, за изменением каких файлов мы хотим наблюдать
     html:   'src/**/*.html',
     js:     'src/js/**/*.js',
-    style:  'src/style/**/*.scss',
+    style:  'src/styles/**/*.scss',
     img:    'src/img/**/*.*',
     audio:  'src/audio/**/*.*'
   },
@@ -75,16 +75,15 @@ function html(){
 ////////////////////js//////////////////////
 
 function js(){
-
   return src([
-    path.src.js + 'sectors/calc.js',
-    path.src.js + 'sectors/maze.js',
     path.src.js + 'sectors/slider.js',
+    path.src.js + 'sectors/calc.js',
     path.src.js + 'sectors/timing.js',
+    path.src.js + 'sectors/maze.js',
     path.src.js + 'index.js'
   ])
     .pipe(concat('index.min.js'))
-    .pipe(uglify())
+    //.pipe(uglify())
     .pipe(dest(path.build.js))
     .pipe(browserSync.stream())
 }
@@ -125,10 +124,10 @@ function clean() {
 }
 
 function watching(){
-  watch(['watch.style'],styles);
-  watch(['watch.html'],html).on('change',browserSync.reload);
-  watch(['watch.js'],js);
-  watch(['watch.img'],images);
+  watch(path.watch.style,styles);
+  watch(path.watch.html,html).on('change',browserSync.reload);
+  watch(path.watch.js,js);
+  watch(path.watch.img,images);
 }
 
 exports.styles      = styles;
@@ -140,4 +139,6 @@ exports.clean       = clean;
 exports.watching    = watching;
 exports.server      = server;
 
-exports.default = series(clean,images,audio,styles,js,html,server,watching);
+
+exports.build = series(clean,images,audio,styles,js,html);
+exports.default = parallel(server,watching);

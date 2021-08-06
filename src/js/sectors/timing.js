@@ -1,5 +1,5 @@
 
-function initTimerblockFunction() {
+function initTimerBlockFunction() {
 
   let rest_time = '15:00';
   let status = 'stop';

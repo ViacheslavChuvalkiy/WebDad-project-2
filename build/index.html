@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>JS tasks</title>
   <link rel="icon" href="./img/js.png" type="image/png">
-  <link href="/node_modules/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.min.css">
 </head>
 <body>
@@ -50,7 +50,7 @@
 
   </div>
 
-  <div id='calc' class="container-block hideBlock">
+  <div id='calc'    class="container-block hideBlock">
 
     <h1>CALCULATOR</h1>
 
@@ -83,7 +83,7 @@
     </div>
 
   </div>
-  <div id='timing' class="container-block hideBlock">
+  <div id='timing'  class="container-block hideBlock">
 
     <h1>TIMING</h1>
 
@@ -100,8 +100,8 @@
         <div class="timing-setting-work">
           <p>Время работы</p>
           <p>
-          <span>Минуты </span>
-          <input type="number" id="timing-work-min" class="setting-input" min="0" max="999" value="45">
+            <span>Минуты </span>
+            <input type="number" id="timing-work-min" class="setting-input" min="0" max="999" value="45">
           </p>
           <p>
             <span>Секунды</span>
@@ -112,11 +112,11 @@
         <div class="timing-setting-rest">
           <p>Время отдыха</p>
           <p>
-          <span>Минуты </span>
+            <span>Минуты </span>
             <input type="number" id="timing-rest-min" class="setting-input" min="0" max="999" value="15">
           </p>
           <p>
-          <span>Секунды</span>
+            <span>Секунды</span>
             <input type="number" id="timing-rest-sec" class="setting-input" min="1" max="59" value="00">
           </p>
         </div>
@@ -127,7 +127,7 @@
         </div>
 
       </div>
-      
+
       <ul class="timing-options">
         <li class="active-time">45/15</li>
         <li>25/10</li>
@@ -158,9 +158,8 @@
     </div>
 
 
-
   </div>
-  <div id='maze' class="container-block">
+  <div id='maze'    class="container-block">
 
     <h1>MAZE</h1>
 
@@ -170,24 +169,27 @@
 
         <h3>Выберите персонажа</h3>
         <div class="setting-players">
-          <input type="text" class="maze-player" name="maze-player" id="player1" checked>
+
           <label for="player1">
+            <input type="radio" name="maze-player" id="player1" value="face-player1.png" checked>
             <img src="./img/player1.png" alt="player1">
           </label>
-          <input type="text" class="maze-player" id="player2">
           <label for="player2">
+            <input type="radio" name="maze-player" id="player2" value="face-player2.png">
             <img src="./img/player2.png" alt="player2">
           </label>
-          <input type="text" class="maze-player" id="player3">
           <label for="player3">
+            <input type="radio" name="maze-player" id="player3" value="face-player3.png">
             <img src="./img/player3.png" alt="player3">
           </label>
-          <input type="text" class="maze-player" id="player4">
+
           <label for="player4">
+            <input type="radio" name="maze-player" id="player4" value="face-player4.png">
             <img src="./img/player4.png" alt="player4">
           </label>
-          <input type="text" class="maze-player" id="player5">
+
           <label for="player5">
+            <input type="radio" name="maze-player" id="player5" value="face-player5.png">
             <img src="./img/player5.png" alt="player5">
           </label>
         </div>
@@ -197,26 +199,32 @@
 
           <div>
             <span>Колонки</span>
-            <input type="number" id="gameColm"
-                 name="setting-game" value="10" min="5" max="15">
+            <input type="number" class="setting-input" id="gameColm"
+                   name="setting-game" value="5" min="4" max="8">
           </div>
 
           <div>
             <span>Ряды</span>
-            <input type="number" id="gameRow"
-                 name="setting-game" value="5" min="2" max="10">
-          </div>
-
+            <input type="number" class="setting-input" id="gameRow"
+                   name="setting-game" value="5" min="4" max="8">
           </div>
 
         </div>
-
       </div>
 
-      <div class="maze-table hide-block">
+      <div class="maze-table-result hideBlock"></div>
 
+      <div class="maze-table hideBlock"></div>
 
+      <div class="maze-table__inf">
+
+        <div class="table-inf__levels hideBlock">
+          <h5>Уровень</h5>
+        </div>
+
+        <button id="start_stop_game">Старт</button>
       </div>
+
 
     </div>
 

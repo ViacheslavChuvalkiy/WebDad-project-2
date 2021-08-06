@@ -3,7 +3,8 @@
 window.onload = function () {
   InitSliderBlockFunction();
   InitCalcBlockFunction();
-  initTimerblockFunction();
+  initTimerBlockFunction();
+  initMazeBlockFunction();
 
 };
 

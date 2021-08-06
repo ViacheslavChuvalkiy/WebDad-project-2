@@ -1,36 +1,52 @@
 
 .container-maze{
-
-  display: grid;
+  position: relative;
   width: 45rem;
   height: 27rem;
-  padding: 0.5rem 0;
   margin: 1rem auto;
-  box-shadow: 0 0 6px 8px grey;;
+  box-shadow: 0 0 6px 8px grey;
   border: 5px solid grey;
   background-color: lightgrey;
 
   .maze-setting{
 
     .setting-players {
-      width: 80%;
+      width: 90%;
       margin: 0 auto;
-      background-image: url("./src/img/background-players.png");
+
+      & img{
+        width: 6rem;
+        height: 13rem;
+        cursor: url("../img/cursor.png") 2 2, pointer;
+      }
 
       & input {
         display: none;
+      }
+
+      & img:hover {
+        box-shadow: 0 0 6px 8px #b288bc;
+      }
+
+      & label input:checked + img{
+        box-shadow: 0 0 6px 8px grey;
       }
     }
 
     .setting-game {
       display: inline-flex;
       margin: 0 auto;
-      background-image: url("./src/img/background-setting.png");
 
       & input {
         width: 2rem;
         padding: 0 0.5rem;
         background-color: transparent;
+      }
+
+      & input::-webkit-outer-spin-button,
+      & input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
       }
 
       & span {
@@ -40,4 +56,88 @@
 
     }
   }
+
+  .maze-table{
+    display: grid;
+    width: 90%;
+    height: 90%;
+    margin: 0.5rem auto;
+    grid-template-columns: repeat(5, minmax(1.5rem, auto));
+    grid-template-rows:    repeat(5, minmax(1.5rem, auto));
+    border: 1px solid black;
+
+    .maze-table__item{
+      width:auto;
+      height: auto;
+      box-shadow: 1px 1px 5px #b288bc;
+      transition: all 1s;
+    }
+
+    .maze-table__player{
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+
+    .maze-table__finish{
+      background-image: url("../img/finish.png") !important;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+
+    .maze-table__stop{
+      background-color: black;
+    }
+
+    .img-table__lose{
+      width: 6rem;
+      height: 13rem;
+      transform: scale(0);
+    }
+
+  }
+
+  .maze-table-result{
+    display: block;
+    position: absolute;
+    margin: 10rem auto;
+    left: 20%;
+    font-weight: 600;
+    font-size: 3rem;
+    color: coral;
+  }
+
+  .maze-table__inf{
+
+
+    & button {
+      margin: 0 auto;
+      min-width: 5rem;
+      max-width: 9rem;
+      margin-top: 1rem;
+      padding: 0.5rem 0;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: black;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+    }
+
+    & button:hover {
+      text-decoration: black underline;
+    }
+  }
+
+  .maze-table__inf_absolute{
+      position: absolute;
+      top: 2rem;
+      right: -12rem;
+
+      & button{
+        border: none;
+      }
+    }
+
 }

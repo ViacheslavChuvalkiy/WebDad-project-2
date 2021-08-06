@@ -34,7 +34,7 @@ body{
   }
 
   .hideBlock {
-    display: none;
+    display: none !important;
   }
 
   @import './slider/style';
