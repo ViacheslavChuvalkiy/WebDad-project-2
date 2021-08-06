@@ -1,0 +1,44 @@
+body{
+  user-select: none;
+}
+
+.container {
+  width: 80%;
+  height: auto;
+  min-height: 29rem;
+  margin: 0 auto;
+  background-color: lightgrey;
+  overflow: hidden;
+  text-align: center;
+
+  .containerInputs {
+    display: inline-block;
+    margin: 2rem 0;
+    width: auto;
+    font-size: 1.3rem;
+    font-weight: 600;
+
+    & input {
+      display: none;
+    }
+
+    & label {
+      cursor: pointer;
+      padding: 0 0.5rem 0 0;
+    }
+
+    & input:checked label{
+      overflow: auto;
+      text-decoration: underline blueviolet;
+    }
+  }
+
+  .hideBlock {
+    display: none !important;
+  }
+
+  @import './slider/style';
+  @import './calc/style';
+  @import './timing/style';
+  @import './maze/style';
+}
