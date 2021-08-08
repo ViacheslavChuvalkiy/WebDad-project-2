@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS tasks</title>
+  <link rel="icon" href="./img/js.png" type="image/png">
+  <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.min.css">
+</head>
+<body>
+
+<div class="container">
+
+  <div class="containerInputs">
+    <input type="radio" id="containerChoice1"
+           name="container" value="slider" checked>
+    <label for="containerChoice1" class="container_label">Slider</label>
+
+    <input type="radio" id="containerChoice2"
+           name="container" value="calc">
+    <label for="containerChoice2" class="container_label">Calc</label>
+
+    <input type="radio" id="containerChoice3"
+           name="container" value="timing">
+    <label for="containerChoice3" class="container_label">Timing</label>
+
+    <input type="radio" id="containerChoice4"
+           name="container" value="maze">
+    <label for="containerChoice4" class="container_label">Maze</label>
+
+    <input type="radio" id="containerChoice5"
+           name="container" value="weather">
+    <label for="containerChoice5" class="container_label">Weather</label>
+  </div>
+
+  <div id='slider' class="container-block hideBlock">
+    <h1>CAROUSEL JAVASCRIPT</h1>
+
+    <div class="sliderRow">
+
+      <span class="sliderLeft left"><</span>
+      <div class="sliderRowContent">
+        <div class="sliderRowBlocks">
+        </div>
+      </div>
+      <span class="sliderRight right">></span>
+    </div>
+
+    <div class="sliderMarks"></div>
+
+  </div>
+
+  <div id='calc'    class="container-block hideBlock">
+
+    <h1>CALCULATOR</h1>
+
+    <div class="container-calc">
+
+      <div class="calc-grid">
+        <div class="grid-item-input">
+          <input type="text" id="calcInput" placeholder="введите число" value="">
+        </div>
+        <div class="grid-item"><</div>
+        <div class="grid-item">7</div>
+        <div class="grid-item">8</div>
+        <div class="grid-item">9</div>
+        <div class="grid-item">*</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+        <div class="grid-item">/</div>
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">+</div>
+        <div class="grid-item">C</div>
+        <div class="grid-item">0</div>
+        <div class="grid-item">=</div>
+        <div class="grid-item">-</div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <div id='timing'  class="container-block hideBlock">
+
+    <h1>TIMING</h1>
+
+    <div class="container-timing">
+      <nav>
+        <ul>
+          <i class="fas fa-cog"></i>
+          <i class="fas fa-circle-notch"></i>
+        </ul>
+      </nav>
+
+      <div class="timing-setting">
+
+        <div class="timing-setting-work">
+          <p>Время работы</p>
+          <p>
+            <span>Минуты </span>
+            <input type="number" id="timing-work-min" class="setting-input" min="0" max="999" value="45">
+          </p>
+          <p>
+            <span>Секунды</span>
+            <input type="number" id="timing-work-sec" class="setting-input" min="1" max="59" value="00">
+          </p>
+        </div>
+
+        <div class="timing-setting-rest">
+          <p>Время отдыха</p>
+          <p>
+            <span>Минуты </span>
+            <input type="number" id="timing-rest-min" class="setting-input" min="0" max="999" value="15">
+          </p>
+          <p>
+            <span>Секунды</span>
+            <input type="number" id="timing-rest-sec" class="setting-input" min="1" max="59" value="00">
+          </p>
+        </div>
+
+        <div class="timing-setting-btn">
+          <button id="go" class=" timing-btn">Поехали</button>
+          <button id="cancel" class=" timing-btn">Отмена</button>
+        </div>
+
+      </div>
+
+      <ul class="timing-options">
+        <li class="active-time">45/15</li>
+        <li>25/10</li>
+        <li>15/5</li>
+      </ul>
+
+      <div class="timing-block">
+
+        <div class="timing-clock-min">
+          <div>45</div>
+        </div>
+        <span>:</span>
+        <div class="timing-clock-sec">
+          <div>00</div>
+        </div>
+
+        <div class="timing-block-btn">
+          <button class="timing-btn" id="start">Старт</button>
+          <button class="timing-btn" id="stop">Стоп</button>
+        </div>
+
+      </div>
+
+      <div class="timing-footer">
+        <p>Time to work!!!</p>
+      </div>
+
+    </div>
+
+
+  </div>
+  <div id='maze'    class="container-block hideBlock">
+
+    <h1>MAZE</h1>
+
+    <div class="container-maze">
+
+      <div class="maze-setting">
+
+        <h3>Выберите персонажа</h3>
+        <div class="setting-players">
+
+          <label for="player1">
+            <input type="radio" name="maze-player" id="player1" value="face-player1.png" checked>
+            <img src="./img/player1.png" alt="player1">
+          </label>
+          <label for="player2">
+            <input type="radio" name="maze-player" id="player2" value="face-player2.png">
+            <img src="./img/player2.png" alt="player2">
+          </label>
+          <label for="player3">
+            <input type="radio" name="maze-player" id="player3" value="face-player3.png">
+            <img src="./img/player3.png" alt="player3">
+          </label>
+
+          <label for="player4">
+            <input type="radio" name="maze-player" id="player4" value="face-player4.png">
+            <img src="./img/player4.png" alt="player4">
+          </label>
+
+          <label for="player5">
+            <input type="radio" name="maze-player" id="player5" value="face-player5.png">
+            <img src="./img/player5.png" alt="player5">
+          </label>
+        </div>
+
+        <h3>Выберите найстройки игры</h3>
+        <div class="setting-game">
+
+          <div>
+            <span>Колонки</span>
+            <input type="number" class="setting-input" id="gameColm"
+                   name="setting-game" value="5" min="4" max="8">
+          </div>
+
+          <div>
+            <span>Ряды</span>
+            <input type="number" class="setting-input" id="gameRow"
+                   name="setting-game" value="5" min="4" max="8">
+          </div>
+
+        </div>
+      </div>
+
+      <div class="maze-table-result hideBlock"></div>
+
+      <div class="maze-table hideBlock"></div>
+
+      <div class="maze-table__inf">
+
+        <div class="table-inf__levels hideBlock">
+          <h5>Уровень</h5>
+        </div>
+
+        <button id="start_stop_game">Старт</button>
+      </div>
+
+
+    </div>
+
+  </div>
+
+  <div id='weather' class="container-block">
+
+    <h1>Weather</h1>
+
+    <div class="container-weather">
+
+      <div class="weather-img">
+        <img src="img/sun.png" alt="weather" id="weather-img">
+      </div>
+
+      <div class="weather-inf">
+        солнечно
+      </div>
+
+      <div class="weather-city">
+        Kyiv, Ukraine
+      </div>
+
+      <div class="weather-location">
+        <select name="city" id="city-select">
+          <option disabled>Выберите город</option>
+          <option value="Kyiv">Kyiv, Ukraine</option>
+          <option value="Boryspil">Boryspil, Ukraine</option>
+          <option value="Lviv">Lviv , Ukraine</option>
+          <option value="Brest">Brest , Belarus</option>
+          <option value="addCity">Добавить город</option>
+        </select>
+
+        <p class="input-message hideBlock"></p>
+        <input type="text" placeholder="введите город" id="addCity" class="hideBlock">
+
+      </div>
+
+    </div>
+  </div>
+
+
+</div>
+
+<script src="./js/index.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</body>
+</html>
