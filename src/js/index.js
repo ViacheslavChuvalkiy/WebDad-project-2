@@ -5,6 +5,7 @@ window.onload = function () {
   InitCalcBlockFunction();
   initTimerBlockFunction();
   initMazeBlockFunction();
+  initWeatherBlockFunction();
 
 };
 

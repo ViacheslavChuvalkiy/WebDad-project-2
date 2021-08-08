@@ -80,6 +80,7 @@ function js(){
     path.src.js + 'sectors/calc.js',
     path.src.js + 'sectors/timing.js',
     path.src.js + 'sectors/maze.js',
+    path.src.js + 'sectors/weather.js',
     path.src.js + 'index.js'
   ])
     .pipe(concat('index.min.js'))

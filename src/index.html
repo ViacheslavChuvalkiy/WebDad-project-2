@@ -5,6 +5,9 @@
   <title>JS tasks</title>
   <link rel="icon" href="./img/js.png" type="image/png">
   <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.min.css">
 </head>
 <body>
@@ -159,7 +162,7 @@
 
 
   </div>
-  <div id='maze'    class="container-block">
+  <div id='maze'    class="container-block hideBlock">
 
     <h1>MAZE</h1>
 
@@ -230,11 +233,46 @@
 
   </div>
 
-  <div id='weather' class="container-block hideBlock"></div>
+  <div id='weather' class="container-block">
+
+    <h1>Weather</h1>
+
+    <div class="container-weather">
+
+      <div class="weather-img">
+        <img src="img/sun.png" alt="weather" id="weather-img">
+      </div>
+
+      <div class="weather-inf">
+        солнечно
+      </div>
+
+      <div class="weather-city">
+        Kyiv, Ukraine
+      </div>
+
+      <div class="weather-location">
+        <select name="city" id="city-select">
+          <option disabled>Выберите город</option>
+          <option value="Kyiv">Kyiv, Ukraine</option>
+          <option value="Boryspil">Boryspil, Ukraine</option>
+          <option value="Lviv">Lviv , Ukraine</option>
+          <option value="Brest">Brest , Belarus</option>
+          <option value="addCity">Добавить город</option>
+        </select>
+
+        <p class="input-message hideBlock"></p>
+        <input type="text" placeholder="введите город" id="addCity" class="hideBlock">
+
+      </div>
+
+    </div>
+  </div>
 
 
 </div>
 
 <script src="./js/index.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </body>
 </html>

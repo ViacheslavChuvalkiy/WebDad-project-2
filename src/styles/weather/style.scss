@@ -1,0 +1,55 @@
+
+  .container-weather {
+
+    width: 40%;
+    margin: 1rem auto 0 auto;
+    padding: 1rem 1rem 0 1rem;
+    font-family: 'Style Script', cursive;
+    background: white;
+    box-shadow: 0 0 6px 8px blueviolet;
+
+    .weather-img {
+      margin: 0 auto;
+
+      & img {
+        width: 9rem;
+        height: 9rem;
+      }
+    }
+
+    .weather-inf {
+      padding: 1rem 0 0 0;
+    }
+
+    .weather-city {
+      padding: 0.5rem;
+    }
+
+    .weather-location {
+      padding: 0 0 1rem 0;
+      position: relative;
+
+      & select {
+        display: block;
+        margin: 0 auto;
+        font-family: 'Style Script', cursive;
+        font-size: 1rem;
+        border: none;
+        background: transparent;
+      }
+
+      & input {
+        position: absolute;
+        width: 45%;
+        top: 0;
+        left: 10rem;
+        font-size: 1rem;
+        font-family: 'Style Script', cursive;
+      }
+      .input-message{
+        color: red;
+        font-size: 0.8rem;
+      }
+    }
+
+  }
